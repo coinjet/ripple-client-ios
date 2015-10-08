@@ -1,13 +1,13 @@
 //
 //  ViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/17/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
 @interface ViewController ()
 
@@ -20,29 +20,29 @@
 
 -(IBAction)buttonPressed:(id)sender
 {
-//    //[[RippleJSManager shared] accountInfo];
+//    //[[DivvyJSManager shared] accountInfo];
 //    NSDictionary * params = @{@"src_account": @"rHQFmb4ZaZLwqfFrNmJwnkizb7yfmkRS96",
 //                              @"dst_account": @"rhxwHhfMhySyYB5Wrq7ohSNBqBfAYanAAx",
 //                              @"dst_amount": @"5000000",
 //                              @"secret": @"snShK2SuSqw7VjAzGKzT5xc1Qyp4K"
 //                              }; //@"src_currencies": @""
 //    
-//    [[RippleJSManager shared] rippleFindPath:params];
+//    [[DivvyJSManager shared] divvyFindPath:params];
     
 
 //    NSDictionary * params = @{@"account": @"rHQFmb4ZaZLwqfFrNmJwnkizb7yfmkRS96",
 //                              @"recipient_address": @"rhxwHhfMhySyYB5Wrq7ohSNBqBfAYanAAx",
-//                              @"currency": @"XRP",
+//                              @"currency": @"XDV",
 //                              @"amount": @"1",
 //                              @"secret": @"snShK2SuSqw7VjAzGKzT5xc1Qyp4K"
 //                              };
 //    
-    //[[RippleJSManager shared] rippleSendTransaction:params];
+    //[[DivvyJSManager shared] divvySendTransaction:params];
 }
 
 -(IBAction)buttonLogin:(id)sender
 {
-//    [[RippleJSManager shared] login:@"ripplelibtest" andPassword:@"TbEz3Rg6qKkNr72r" withBlock:^(NSError *error) {
+//    [[DivvyJSManager shared] login:@"divvylibtest" andPassword:@"TbEz3Rg6qKkNr72r" withBlock:^(NSError *error) {
 //        if (error) {
 //            UIAlertView *alert = [[UIAlertView alloc]
 //                                  initWithTitle: @"Could not login"

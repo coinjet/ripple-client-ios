@@ -1,6 +1,6 @@
 //
 //  UserAccountInformation.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -9,7 +9,7 @@
 #import "AccountBalanceManager.h"
 
 #import "NSObject+KJSerializer.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
 #import "RPBlobData.h"
 #import "RPContact.h"
@@ -49,7 +49,7 @@
             // Check for valid?
             _accountData = obj;
             
-            //[self log:[NSString stringWithFormat:@"Balance XRP: %@", accountData.Balance]];
+            //[self log:[NSString stringWithFormat:@"Balance XDV: %@", accountData.Balance]];
             
             //[self processBalances];
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdatedBalance object:nil userInfo:nil];
@@ -98,13 +98,13 @@
         NSDictionary * mmeta = [responseData objectForKey:@"mmeta"];
         NSArray * nodes = [mmeta objectForKey:@"nodes"];
         
-        BOOL updatedXRP = NO;
+        BOOL updatedXDV = NO;
         BOOL updatedIOU = NO;
         
         for (NSDictionary * node in nodes) {
             NSString * entryType = [node objectForKey:@"entryType"];
             if ([entryType isEqualToString:@"AccountRoot"]) {
-                // XRP
+                // XDV
                 NSDictionary * fields = [node objectForKey:@"fields"];
                 NSString * Account = [fields objectForKey:@"Account"];
                 if ([Account isEqualToString:_account]) {
@@ -115,7 +115,7 @@
                     // Validate?
                     if (accountData.Account && accountData.Balance) {
                         _accountData = accountData;
-                        updatedXRP = YES;
+                        updatedXDV = YES;
                     }
                 }
             }
@@ -168,11 +168,11 @@
                 value = [RPHelper safeNumberFromDictionary:amount withKey:@"value"];
             }
             else {
-                // Received XRP
+                // Received XDV
                 NSDecimalNumber * drop = [RPHelper safeDecimalNumberFromDictionary:transaction withKey:@"Amount"];
-                value = [RPHelper dropsToRipples:drop];
+                value = [RPHelper dropsToDivvys:drop];
                 
-                currency = GLOBAL_XRP_STRING;
+                currency = GLOBAL_XDV_STRING;
             }
             
             NSNumberFormatter *formatter = [NSNumberFormatter new];
@@ -192,7 +192,7 @@
         
         
         
-        if (updatedXRP) {
+        if (updatedXDV) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdatedBalance object:nil userInfo:nil];
         }
         if (updatedIOU) {
@@ -210,12 +210,12 @@
     _accountLines = nil;
 }
 
--(NSDictionary*)rippleBalances
+-(NSDictionary*)divvyBalances
 {
     NSMutableDictionary * balances = [NSMutableDictionary dictionary];
     if (_accountData) {
-        NSDecimalNumber * balance = [RPHelper dropsToRipples:_accountData.Balance];
-        [balances setObject:balance forKey:GLOBAL_XRP_STRING];
+        NSDecimalNumber * balance = [RPHelper dropsToDivvys:_accountData.Balance];
+        [balances setObject:balance forKey:GLOBAL_XDV_STRING];
     }
     for (RPAccountLine * line in _accountLines) {
         NSNumber * balance = [balances objectForKey:line.currency];

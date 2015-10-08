@@ -1,14 +1,14 @@
 //
 //  BalancesViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/22/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
 #import "BalancesViewController.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+Authentication.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+Authentication.h"
 #import "SendTransactionViewController.h"
 #import "SendGenericViewController.h"
 #import "RPNewTransaction.h"
@@ -172,13 +172,13 @@
 
 -(void)logout
 {
-    [[RippleJSManager shared] logout];
+    [[DivvyJSManager shared] logout];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)updateBalances
 {
-    balances = [[RippleJSManager shared] rippleBalances];
+    balances = [[DivvyJSManager shared] divvyBalances];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -215,13 +215,13 @@
 //        // SHOULDN"T HAPPEN
 //        if (indexPath.row == 0) {
 //            // Receive cell
-//            //NSString *address = [[RippleJSManager shared] rippleWalletAddress];
+//            //NSString *address = [[DivvyJSManager shared] divvyWalletAddress];
 //            cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 //            cell.textLabel.text = @"Send";
 //        }
 //        else if (indexPath.row == 1) {
 //            // Receive cell
-//            //NSString *address = [[RippleJSManager shared] rippleWalletAddress];
+//            //NSString *address = [[DivvyJSManager shared] divvyWalletAddress];
 //            cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 //            cell.textLabel.text = @"Receive";
 //        }
@@ -241,9 +241,9 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
     [formatter setMaximumFractionDigits:2];
     
-    //        if ([key isEqualToString:@"XRP"]) {
-    //            NSString *address = [[RippleJSManager shared] rippleWalletAddress];
-    //            cell = [tableView dequeueReusableCellWithIdentifier:@"xrp"];
+    //        if ([key isEqualToString:@"XDV"]) {
+    //            NSString *address = [[DivvyJSManager shared] divvyWalletAddress];
+    //            cell = [tableView dequeueReusableCellWithIdentifier:@"xdv"];
     //            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [formatter stringFromNumber:amount], key];
     //            cell.detailTextLabel.text = address;
     //        }
@@ -297,7 +297,7 @@
 //            [self performSegueWithIdentifier:@"Tx" sender:nil];
 //            
 //            
-////            NSString *address = [[RippleJSManager shared] rippleWalletAddress];
+////            NSString *address = [[DivvyJSManager shared] divvyWalletAddress];
 ////            if (address) {
 ////                UIPasteboard *pb = [UIPasteboard generalPasteboard];
 ////                [pb setString:address];
@@ -315,8 +315,8 @@
 //    else {
 //        //NSString * key = [[balances allKeys] objectAtIndex:indexPath.row];
 //        //[self performSegueWithIdentifier:@"Send" sender:key];
-////        if ([key isEqualToString:@"XRP"]) {
-////            // Send XRP only
+////        if ([key isEqualToString:@"XDV"]) {
+////            // Send XDV only
 ////            [self performSegueWithIdentifier:@"Send" sender:key];
 ////        }
 //    }
@@ -324,7 +324,7 @@
 
 -(void)appEnteredForeground
 {
-    //[[RippleJSManager shared] connect];
+    //[[DivvyJSManager shared] connect];
 }
 
 -(void)appEnteredBackground
@@ -349,7 +349,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBalances) name:kNotificationUpdatedBalance object:nil];
     
-    NSString * username = [[RippleJSManager shared] username];
+    NSString * username = [[DivvyJSManager shared] username];
     if (username) {
         [self.navLogout setTitle:username forState:UIControlStateNormal];
     }

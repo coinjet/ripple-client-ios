@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+TransactionCallback.h
-//  Ripple
+//  DivvyJSManager+TransactionCallback.h
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
-@interface RippleJSManager (TransactionCallback)
+@interface DivvyJSManager (TransactionCallback)
 
 -(void)wrapperSubscribeTransactions;
 -(void)wrapperRegisterHandlerTransactionCallback;

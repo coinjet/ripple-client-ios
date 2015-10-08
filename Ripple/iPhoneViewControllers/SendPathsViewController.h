@@ -1,6 +1,6 @@
 //
 //  SendPathsViewController.h
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/29/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -10,7 +10,7 @@
 
 @class RPNewTransaction;
 
-@interface SendPathsViewController : RippleStatusViewController
+@interface SendPathsViewController : DivvyStatusViewController
 
 @property (strong, nonatomic) RPNewTransaction * transaction;
 @property (strong, nonatomic) NSArray * paths;

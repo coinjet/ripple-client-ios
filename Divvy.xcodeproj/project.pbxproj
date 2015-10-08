@@ -179,7 +179,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07507FA98EC04EEEAD01EA5C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		17ABA6772B5260E3172F6B40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2B08036A17A321510095F199 /* AccountBalanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountBalanceManager.h; path = Managers/Other/AccountBalanceManager.h; sourceTree = "<group>"; };
 		2B08036B17A321510095F199 /* AccountBalanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountBalanceManager.m; path = Managers/Other/AccountBalanceManager.m; sourceTree = "<group>"; };
 		2B08036D17A32DE70095F199 /* AccountHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountHistoryManager.h; path = Managers/Other/AccountHistoryManager.h; sourceTree = "<group>"; };
@@ -211,14 +211,14 @@
 		2B201DDF179E497C00B52E90 /* RPTransactionSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPTransactionSubscription.m; path = Objects/RPTransactionSubscription.m; sourceTree = "<group>"; };
 		2B372C59185FEF8A009A43EF /* PushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushNotificationManager.h; path = Managers/PushNotificationManager.h; sourceTree = "<group>"; };
 		2B372C5A185FEF8A009A43EF /* PushNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushNotificationManager.m; path = Managers/PushNotificationManager.m; sourceTree = "<group>"; };
-		2B5860BB179764A300200D0C /* Ripple Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ripple Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5860BB179764A300200D0C /* Divvy Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Divvy Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5860BE179764A300200D0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2B5860C0179764A300200D0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B5860C2179764A300200D0C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2B5860C6179764A300200D0C /* Ripple-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ripple-Info.plist"; sourceTree = "<group>"; };
+		2B5860C6179764A300200D0C /* Divvy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Divvy-Info.plist"; sourceTree = "<group>"; };
 		2B5860C8179764A300200D0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B5860CA179764A300200D0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2B5860CC179764A300200D0C /* Ripple-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ripple-Prefix.pch"; sourceTree = "<group>"; };
+		2B5860CC179764A300200D0C /* Divvy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Divvy-Prefix.pch"; sourceTree = "<group>"; };
 		2B5860CD179764A300200D0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B5860CE179764A300200D0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2B5860D0179764A300200D0C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -227,9 +227,9 @@
 		2B5860D7179764A300200D0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2B5860DC179764A300200D0C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2B5860DD179764A300200D0C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2B5860E4179764A300200D0C /* RippleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RippleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B5860E4179764A300200D0C /* DivvyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivvyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5860E5179764A300200D0C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		2B5860ED179764A300200D0C /* RippleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RippleTests-Info.plist"; sourceTree = "<group>"; };
+		2B5860ED179764A300200D0C /* DivvyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DivvyTests-Info.plist"; sourceTree = "<group>"; };
 		2B5860EF179764A300200D0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B5860F1179764A300200D0C /* RippleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RippleTests.h; sourceTree = "<group>"; };
 		2B5860F2179764A300200D0C /* RippleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RippleTests.m; sourceTree = "<group>"; };
@@ -397,6 +397,7 @@
 		2BE8F64017A9EF9100372FCB /* RPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPHelper.h; path = Helpers/RPHelper.h; sourceTree = "<group>"; };
 		2BE8F64117A9EF9100372FCB /* RPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPHelper.m; path = Helpers/RPHelper.m; sourceTree = "<group>"; };
 		3A183AA93EAB4C46A12D8CE1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		46992DF1178B87C9FEAD29F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,19 +503,19 @@
 				2B66B06D17AFA04B00CC3523 /* Fonts */,
 				2B201D0A179D22AE00B52E90 /* Images */,
 				2B5861001797678C00200D0C /* Libraries */,
-				2B5860C4179764A300200D0C /* Ripple */,
-				2B5860EB179764A300200D0C /* RippleTests */,
+				2B5860C4179764A300200D0C /* Divvy */,
+				2B5860EB179764A300200D0C /* DivvyTests */,
 				2B5860BD179764A300200D0C /* Frameworks */,
 				2B5860BC179764A300200D0C /* Products */,
-				07507FA98EC04EEEAD01EA5C /* Pods.xcconfig */,
+				8BB398B2B582C17B370DF93D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		2B5860BC179764A300200D0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B5860BB179764A300200D0C /* Ripple Client.app */,
-				2B5860E4179764A300200D0C /* RippleTests.octest */,
+				2B5860BB179764A300200D0C /* Divvy Client.app */,
+				2B5860E4179764A300200D0C /* DivvyTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -540,7 +541,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2B5860C4179764A300200D0C /* Ripple */ = {
+		2B5860C4179764A300200D0C /* Divvy */ = {
 			isa = PBXGroup;
 			children = (
 				2BE8F63F17A9EF7D00372FCB /* Helpers */,
@@ -556,6 +557,7 @@
 				2BCBBBC31821EA6B00962798 /* Images.xcassets */,
 				2B5860C5179764A300200D0C /* Supporting Files */,
 			);
+			name = Divvy;
 			path = Ripple;
 			sourceTree = "<group>";
 		};
@@ -567,10 +569,10 @@
 				2BA3229518400B0B0026838A /* AppIcon60x60@2x.png */,
 				2BBB7A6417BAE24300CD4BEA /* 57.png */,
 				2BBB7A6217BAE23F00CD4BEA /* 114.png */,
-				2B5860C6179764A300200D0C /* Ripple-Info.plist */,
+				2B5860C6179764A300200D0C /* Divvy-Info.plist */,
 				2B5860C7179764A300200D0C /* InfoPlist.strings */,
 				2B5860CA179764A300200D0C /* main.m */,
-				2B5860CC179764A300200D0C /* Ripple-Prefix.pch */,
+				2B5860CC179764A300200D0C /* Divvy-Prefix.pch */,
 				2B5860D0179764A300200D0C /* Default.png */,
 				2B5860D2179764A300200D0C /* Default@2x.png */,
 				2B5860D4179764A300200D0C /* Default-568h@2x.png */,
@@ -578,20 +580,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2B5860EB179764A300200D0C /* RippleTests */ = {
+		2B5860EB179764A300200D0C /* DivvyTests */ = {
 			isa = PBXGroup;
 			children = (
 				2B5860F1179764A300200D0C /* RippleTests.h */,
 				2B5860F2179764A300200D0C /* RippleTests.m */,
 				2B5860EC179764A300200D0C /* Supporting Files */,
 			);
+			name = DivvyTests;
 			path = RippleTests;
 			sourceTree = "<group>";
 		};
 		2B5860EC179764A300200D0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2B5860ED179764A300200D0C /* RippleTests-Info.plist */,
+				2B5860ED179764A300200D0C /* DivvyTests-Info.plist */,
 				2B5860EE179764A300200D0C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -941,12 +944,21 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		8BB398B2B582C17B370DF93D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17ABA6772B5260E3172F6B40 /* Pods.debug.xcconfig */,
+				46992DF1178B87C9FEAD29F9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B5860BA179764A300200D0C /* Ripple */ = {
+		2B5860BA179764A300200D0C /* Divvy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5860F6179764A300200D0C /* Build configuration list for PBXNativeTarget "Ripple" */;
+			buildConfigurationList = 2B5860F6179764A300200D0C /* Build configuration list for PBXNativeTarget "Divvy" */;
 			buildPhases = (
 				53BE332B92FD41A7BC64EF1A /* Check Pods Manifest.lock */,
 				2B5860B7179764A300200D0C /* Sources */,
@@ -959,14 +971,14 @@
 			dependencies = (
 				2B58F7D6179F9E29009AEEEA /* PBXTargetDependency */,
 			);
-			name = Ripple;
+			name = Divvy;
 			productName = Ripple;
-			productReference = 2B5860BB179764A300200D0C /* Ripple Client.app */;
+			productReference = 2B5860BB179764A300200D0C /* Divvy Client.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B5860E3179764A300200D0C /* RippleTests */ = {
+		2B5860E3179764A300200D0C /* DivvyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5860F9179764A300200D0C /* Build configuration list for PBXNativeTarget "RippleTests" */;
+			buildConfigurationList = 2B5860F9179764A300200D0C /* Build configuration list for PBXNativeTarget "DivvyTests" */;
 			buildPhases = (
 				2B5860DF179764A300200D0C /* Sources */,
 				2B5860E0179764A300200D0C /* Frameworks */,
@@ -978,9 +990,9 @@
 			dependencies = (
 				2B5860EA179764A300200D0C /* PBXTargetDependency */,
 			);
-			name = RippleTests;
+			name = DivvyTests;
 			productName = RippleTests;
-			productReference = 2B5860E4179764A300200D0C /* RippleTests.octest */;
+			productReference = 2B5860E4179764A300200D0C /* DivvyTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -998,7 +1010,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B5860B6179764A300200D0C /* Build configuration list for PBXProject "Ripple" */;
+			buildConfigurationList = 2B5860B6179764A300200D0C /* Build configuration list for PBXProject "Divvy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1016,8 +1028,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				2B5860BA179764A300200D0C /* Ripple */,
-				2B5860E3179764A300200D0C /* RippleTests */,
+				2B5860BA179764A300200D0C /* Divvy */,
+				2B5860E3179764A300200D0C /* DivvyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1164,7 +1176,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1242,7 +1254,7 @@
 /* Begin PBXTargetDependency section */
 		2B5860EA179764A300200D0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B5860BA179764A300200D0C /* Ripple */;
+			target = 2B5860BA179764A300200D0C /* Divvy */;
 			targetProxy = 2B5860E9179764A300200D0C /* PBXContainerItemProxy */;
 		};
 		2B58F7D6179F9E29009AEEEA /* PBXTargetDependency */ = {
@@ -1300,7 +1312,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1333,7 +1345,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1350,22 +1362,22 @@
 		};
 		2B5860F7179764A300200D0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07507FA98EC04EEEAD01EA5C /* Pods.xcconfig */;
+			baseConfigurationReference = 17ABA6772B5260E3172F6B40 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Ripple/Ripple-Prefix.pch";
+				GCC_PREFIX_HEADER = "Ripple/Divvy-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Libraries/QR-Code-Encoder-for-Objective-C\"/**";
-				INFOPLIST_FILE = "Ripple/Ripple-Info.plist";
+				INFOPLIST_FILE = "Ripple/Divvy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/ZBarSDK-armv7s\"",
 				);
-				PRODUCT_NAME = "Ripple Client";
+				PRODUCT_NAME = "Divvy Client";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1375,22 +1387,22 @@
 		};
 		2B5860F8179764A300200D0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07507FA98EC04EEEAD01EA5C /* Pods.xcconfig */;
+			baseConfigurationReference = 46992DF1178B87C9FEAD29F9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OpenCoin Inc. (NW66U7LJRG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OpenCoin Inc. (NW66U7LJRG)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Ripple/Ripple-Prefix.pch";
+				GCC_PREFIX_HEADER = "Ripple/Divvy-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Libraries/QR-Code-Encoder-for-Objective-C\"/**";
-				INFOPLIST_FILE = "Ripple/Ripple-Info.plist";
+				INFOPLIST_FILE = "Ripple/Divvy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/ZBarSDK-armv7s\"",
 				);
-				PRODUCT_NAME = "Ripple Client";
+				PRODUCT_NAME = "Divvy Client";
 				PROVISIONING_PROFILE = "7A2B6752-D9DD-43A5-8F13-94C7150297A5";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1408,8 +1420,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ripple/Ripple-Prefix.pch";
-				INFOPLIST_FILE = "RippleTests/RippleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RippleTests/DivvyTests-Info.plist";
+				PRODUCT_NAME = DivvyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1425,8 +1437,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ripple/Ripple-Prefix.pch";
-				INFOPLIST_FILE = "RippleTests/RippleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "RippleTests/DivvyTests-Info.plist";
+				PRODUCT_NAME = DivvyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1435,7 +1447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B5860B6179764A300200D0C /* Build configuration list for PBXProject "Ripple" */ = {
+		2B5860B6179764A300200D0C /* Build configuration list for PBXProject "Divvy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5860F4179764A300200D0C /* Debug */,
@@ -1444,7 +1456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5860F6179764A300200D0C /* Build configuration list for PBXNativeTarget "Ripple" */ = {
+		2B5860F6179764A300200D0C /* Build configuration list for PBXNativeTarget "Divvy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5860F7179764A300200D0C /* Debug */,
@@ -1453,7 +1465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5860F9179764A300200D0C /* Build configuration list for PBXNativeTarget "RippleTests" */ = {
+		2B5860F9179764A300200D0C /* Build configuration list for PBXNativeTarget "DivvyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B5860FA179764A300200D0C /* Debug */,

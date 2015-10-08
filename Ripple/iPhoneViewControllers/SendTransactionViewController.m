@@ -1,6 +1,6 @@
 //
 //  SendTransactionViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/22/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -8,8 +8,8 @@
 
 #import "SendTransactionViewController.h"
 #import "SVProgressHUD.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+SendTransaction.h"
 
 @interface SendTransactionViewController () <UITextFieldDelegate>
 
@@ -50,7 +50,7 @@
 //    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
 //    [f setNumberStyle:NSNumberFormatterDecimalStyle];
 //    NSNumber * number = [f numberFromString:self.textFieldAmount.text];
-//    [[RippleJSManager shared] wrapperSendTransactionAmount:number currency:self.currency toRecipient:self.textFieldRecipient.text toCurrency:self. withBlock:^(NSError *error) {
+//    [[DivvyJSManager shared] wrapperSendTransactionAmount:number currency:self.currency toRecipient:self.textFieldRecipient.text toCurrency:self. withBlock:^(NSError *error) {
 //        [SVProgressHUD dismiss];
 //        if (error) {
 //            UIAlertView *alert = [[UIAlertView alloc]
@@ -74,11 +74,11 @@
 }
 
 
--(void)RippleJSManagerConnected
+-(void)DivvyJSManagerConnected
 {
     
 }
--(void)RippleJSManagerDisconnected
+-(void)DivvyJSManagerDisconnected
 {
     [self done];
 }
@@ -98,9 +98,9 @@
     self.navTitle.text = [NSString stringWithFormat:@"Send %@", self.currency];
     
     
-    // Subscribe to ripple network state
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RippleJSManagerConnected) name:kNotificationRippleConnected object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RippleJSManagerDisconnected) name:kNotificationRippleDisconnected object:nil];
+    // Subscribe to divvy network state
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DivvyJSManagerConnected) name:kNotificationDivvyConnected object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DivvyJSManagerDisconnected) name:kNotificationDivvyDisconnected object:nil];
 }
 
 - (void)didReceiveMemoryWarning

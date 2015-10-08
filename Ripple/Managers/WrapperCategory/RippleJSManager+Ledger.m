@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+Ledger.m
-//  Ripple
+//  DivvyJSManager+Ledger.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+Ledger.h"
+#import "DivvyJSManager+Ledger.h"
 
-@implementation RippleJSManager (Ledger)
+@implementation DivvyJSManager (Ledger)
 
 -(void)registerBridgeHandlers
 {

@@ -1,6 +1,6 @@
 //
 //  AccountHistoryManager.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -10,12 +10,12 @@
 
 #import "RPTransaction.h"
 #import "NSObject+KJSerializer.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 #import "RPHelper.h"
 
 @implementation AccountHistoryManager
 
--(NSArray*)rippleTxHistory
+-(NSArray*)divvyTxHistory
 {
     return _tx_history;
 }
@@ -41,19 +41,19 @@
                 
                 NSDictionary * ammount = [tx objectForKey:@"Amount"];
                 if (ammount && [ammount isKindOfClass:[NSDictionary class]]) {
-                    // Non XRP
+                    // Non XDV
                     t.Currency = [ammount objectForKey:@"currency"];
                     
                     NSString * ammountString = [ammount objectForKey:@"value"];
                     t.Amount = [NSDecimalNumber decimalNumberWithString:ammountString];
                 }
                 else {
-                    // XRP
-                    t.Currency = GLOBAL_XRP_STRING;
+                    // XDV
+                    t.Currency = GLOBAL_XDV_STRING;
                     
                     NSString * ammountString = [tx objectForKey:@"Amount"];
                     NSDecimalNumber * num = [NSDecimalNumber decimalNumberWithString:ammountString];
-                    t.Amount = [RPHelper dropsToRipples:num];
+                    t.Amount = [RPHelper dropsToDivvys:num];
                 }
                 
                 //RPTransaction * transaction = [RPTransaction new];
@@ -94,7 +94,7 @@
 }
 
 /*
- Tx result from new ripple account with a 100 XRP balance
+ Tx result from new divvy account with a 100 XDV balance
  
 {
     account = rfGKu3tSxwMFZ5mQ6bUcxWrxahACxABqKc;
@@ -163,7 +163,7 @@
 }
  
  
- Same account with an additional 10 XRP transfered
+ Same account with an additional 10 XDV transfered
  
 {
     account = rfGKu3tSxwMFZ5mQ6bUcxWrxahACxABqKc;

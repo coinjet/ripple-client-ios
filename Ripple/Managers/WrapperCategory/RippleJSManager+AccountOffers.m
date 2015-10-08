@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+AccountOffers.m
-//  Ripple
+//  DivvyJSManager+AccountOffers.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+AccountOffers.h"
+#import "DivvyJSManager+AccountOffers.h"
 
-@implementation RippleJSManager (AccountOffers)
+@implementation DivvyJSManager (AccountOffers)
 
 
 // NOT YET NEEDED

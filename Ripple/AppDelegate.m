@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/17/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "RPGlobals.h"
 #import "PushNotificationManager.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
 //#define MIXPANEL_TOKEN @"27f807b416137d59b1802c7ebe6059b0"
 
@@ -104,7 +104,7 @@
 
 -(void)userLoggedIn
 {
-    NSString * wallet = [[RippleJSManager shared] rippleWalletAddress];
+    NSString * wallet = [[DivvyJSManager shared] divvyWalletAddress];
     [self.pushNotificationManager registerPushNotifications:YES withWallet:wallet];
 }
 

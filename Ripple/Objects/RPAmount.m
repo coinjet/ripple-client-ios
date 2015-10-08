@@ -1,6 +1,6 @@
 //
 //  RPAmount.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 8/7/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -27,10 +27,10 @@
     id source_amount = [dic valueForKey:@"source_amount"];
     
     if ([source_amount isKindOfClass:[NSString class]]) {
-        // XRP
-        self.from_currency = GLOBAL_XRP_STRING;
+        // XDV
+        self.from_currency = GLOBAL_XDV_STRING;
         NSDecimalNumber * num = [NSDecimalNumber decimalNumberWithString:source_amount];
-        self.from_amount = [RPHelper dropsToRipples:num];
+        self.from_amount = [RPHelper dropsToDivvys:num];
     }
     else if ([source_amount isKindOfClass:[NSDictionary class]]) {
         // IOU

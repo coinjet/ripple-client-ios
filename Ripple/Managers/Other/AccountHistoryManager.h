@@ -1,6 +1,6 @@
 //
 //  AccountHistoryManager.h
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -16,7 +16,7 @@
 
 -(id)initWithAccount:(NSString*)account;
 
--(NSArray*)rippleTxHistory;
+-(NSArray*)divvyTxHistory;
 -(void)processAccountTx:(NSDictionary*)responseData;
 
 @end

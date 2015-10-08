@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+AccountInfo.m
-//  Ripple
+//  DivvyJSManager+AccountInfo.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+AccountInfo.h"
+#import "DivvyJSManager+AccountInfo.h"
 
-@implementation RippleJSManager (AccountInfo)
+@implementation DivvyJSManager (AccountInfo)
 
 -(void)wrapperAccountInfo
 {

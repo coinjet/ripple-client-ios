@@ -1,6 +1,6 @@
 //
 //  SendAmountViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/23/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import "SendAmountViewController.h"
 #import "RPNewTransaction.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 #import "AppDelegate.h"
 #import "SendPathsViewController.h"
 #import "SVProgressHUD.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager+SendTransaction.h"
 #import "SendWaitingViewController.h"
 
 @interface SendAmountViewController () <UITextFieldDelegate>
@@ -65,15 +65,15 @@
     //[self performSegueWithIdentifier:@"Skip" sender:nil];
     
 //    [SVProgressHUD showWithStatus:@"Finding paths..." maskType:SVProgressHUDMaskTypeGradient];
-//    [[RippleJSManager shared] wrapperFindPathWithAmount:self.transaction.Amount currency:self.transaction.Currency toRecipient:self.transaction.Destination withBlock:^(NSArray *paths, NSError *error) {
+//    [[DivvyJSManager shared] wrapperFindPathWithAmount:self.transaction.Amount currency:self.transaction.Currency toRecipient:self.transaction.Destination withBlock:^(NSArray *paths, NSError *error) {
 //        if (!error) {
 //            [SVProgressHUD dismiss];
 //            
 //            [self performSegueWithIdentifier:@"Next" sender:paths];
 //        }
 //        else {
-//            // Check if sending XRP
-//            if ([self.transaction.Currency isEqualToString:GLOBAL_XRP_STRING]) {
+//            // Check if sending XDV
+//            if ([self.transaction.Currency isEqualToString:GLOBAL_XDV_STRING]) {
 //                [SVProgressHUD dismiss];
 //                [self performSegueWithIdentifier:@"Skip" sender:nil];
 //            }
@@ -85,12 +85,12 @@
     
     
     // Finding paths
-//    if ([self.transaction.Currency isEqualToString:GLOBAL_XRP_STRING]) {
+//    if ([self.transaction.Currency isEqualToString:GLOBAL_XDV_STRING]) {
 //        [self performSegueWithIdentifier:@"Skip" sender:nil];
 //    }
 //    else {
 //        [SVProgressHUD showWithStatus:@"Finding paths..." maskType:SVProgressHUDMaskTypeGradient];
-//        [[RippleJSManager shared] wrapperFindPathWithAmount:self.transaction.Amount currency:self.transaction.Currency toRecipient:self.transaction.Destination withBlock:^(NSArray *paths, NSError *error) {
+//        [[DivvyJSManager shared] wrapperFindPathWithAmount:self.transaction.Amount currency:self.transaction.Currency toRecipient:self.transaction.Destination withBlock:^(NSArray *paths, NSError *error) {
 //            if (!error) {
 //                [SVProgressHUD dismiss];
 //                

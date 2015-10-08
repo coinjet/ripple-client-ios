@@ -1,20 +1,20 @@
 //
-//  RippleJSManager+SendTransaction.m
-//  Ripple
+//  DivvyJSManager+SendTransaction.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager+SendTransaction.h"
 
-@implementation RippleJSManager (SendTransaction)
+@implementation DivvyJSManager (SendTransaction)
 
 -(NSError *)checkForErrorResponse:(NSDictionary*)responseData
 {
     NSError * error;
     if (responseData && [responseData isKindOfClass:[NSDictionary class]]) {
-        // Check for ripple-lib error
+        // Check for divvy-lib error
         NSNumber * returnCode = [responseData objectForKey:@"engine_result_code"];
         if (returnCode.integerValue != 0) {
             // Could not send transaction
@@ -38,7 +38,7 @@
     {
         "engine_result" = "tecUNFUNDED_PAYMENT";
         "engine_result_code" = 104;
-        "engine_result_message" = "Insufficient XRP balance to send.";
+        "engine_result_message" = "Insufficient XDV balance to send.";
         "tx_blob" = 1200002200000000240000000861400000E8D4A5100068400000000000000A73210376BA4EAE729354BED97E26A03AEBA6FB9078BBBB1EAB590772734BCE42E82CD574473045022100D95DA3C853A9C0E048290E142887163B24263ED4A2538F24DC44852E45273D1F0220551C62788BA3A5E35356B8377821916989C3A34AC4E120069EC2F7DC0655B6338114B4037480188FA0DD8DC61DC57791C94A940CF1F083142B56FFC66587C6ECF125506A599C0BD9D376430D;
         "tx_json" =     {
             Account = rHQFmb4ZaZLwqfFrNmJwnkizb7yfmkRS96;
@@ -124,7 +124,7 @@
                                                                      "type_hex" = 0000000000000031;
                                                                  },
                                                                  {
-                                                                     currency = XRP;
+                                                                     currency = XDV;
                                                                      type = 16;
                                                                      "type_hex" = 0000000000000010;
                                                                  }
@@ -139,7 +139,7 @@
                             );
         "destination_account" = rhxwHhfMhySyYB5Wrq7ohSNBqBfAYanAAx;
         "destination_currencies" =     (
-                                        XRP
+                                        XDV
                                         );
         "ledger_current_index" = 1365182;
     }
@@ -167,9 +167,9 @@
                 [paths addObject:obj];
             }
             
-            if ([currency isEqualToString:GLOBAL_XRP_STRING]) {
+            if ([currency isEqualToString:GLOBAL_XDV_STRING]) {
                 RPAmount * obj = [RPAmount new];
-                obj.from_currency = GLOBAL_XRP_STRING;
+                obj.from_currency = GLOBAL_XDV_STRING;
                 obj.from_amount = amount;
                 [paths addObject:obj];
             }

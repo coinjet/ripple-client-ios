@@ -1,6 +1,6 @@
 //
 //  PushNotificationManager.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 12/16/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -10,7 +10,7 @@
 #import "RPGlobals.h"
 #import "../../Pods/AFNetworking/AFNetworking/AFNetworking.h"
 
-//#import "RippleJSManager.h"
+//#import "DivvyJSManager.h"
 
 @interface PushNotificationManager () {
     NSString * _deviceToken;
@@ -121,7 +121,7 @@
     if (_deviceToken && wallet) {
         NSDictionary *parameters = @{
                                      @"udid": _deviceToken,
-                                     @"ripple_address": wallet
+                                     @"divvy_address": wallet
                                      };
         
         NSString * url;

@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'Ripple' target in the 'Ripple' project
+// Prefix header for all source files of the 'Divvy' target in the 'Divvy' project
 //
 
 #import <Availability.h>
@@ -20,5 +20,5 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     //#import "../Pods/Mixpanel/Mixpanel/Mixpanel.h"
     #import "RPGlobals.h"
-    #import "RippleStatusViewController.h"
+    #import "DivvyStatusViewController.h"
 #endif

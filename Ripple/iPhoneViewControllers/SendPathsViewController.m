@@ -1,6 +1,6 @@
 //
 //  SendPathsViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/29/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -10,8 +10,8 @@
 #import "AppDelegate.h"
 #import "SendWaitingViewController.h"
 #import "RPNewTransaction.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+SendTransaction.h"
 #import "SVProgressHUD.h"
 
 @interface SendPathsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
@@ -29,7 +29,7 @@
 {
     if (buttonIndex == 0) {
         // Open web client
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://ripple.com/client"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://divvy.com/client"]];
     }
 }
 
@@ -74,7 +74,7 @@
     
     RPAmount * path = [_paths objectAtIndex:indexPath.row];
     
-    if (GLOBAL_RESTRICT_DIGITAL_CURRENCIES && [path.from_currency isEqualToString:GLOBAL_XRP_STRING]) {
+    if (GLOBAL_RESTRICT_DIGITAL_CURRENCIES && [path.from_currency isEqualToString:GLOBAL_XDV_STRING]) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APPLE_MESSAGE_TITLE
                                                          message:APPLE_MESSAGE_MESG
                                                         delegate:self
@@ -104,7 +104,7 @@
     self.labelFindingPaths.text = @"Finding paths...";
     self.labelFindingPaths.hidden = NO;
     
-    [[RippleJSManager shared] wrapperFindPathWithAmount:self.transaction.to_amount currency:self.transaction.to_currency toRecipient:self.transaction.to_address withBlock:^(NSArray *paths, NSError *error) {
+    [[DivvyJSManager shared] wrapperFindPathWithAmount:self.transaction.to_amount currency:self.transaction.to_currency toRecipient:self.transaction.to_address withBlock:^(NSArray *paths, NSError *error) {
         if (!error) {
             self.tableView.hidden = NO;
             _paths = paths;

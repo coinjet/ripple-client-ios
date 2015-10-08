@@ -1,6 +1,6 @@
 //
 //  SendWaitingViewController.h
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/24/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -10,7 +10,7 @@
 
 @class RPNewTransaction;
 
-@interface SendWaitingViewController : RippleStatusViewController
+@interface SendWaitingViewController : DivvyStatusViewController
 
 @property (strong, nonatomic) RPNewTransaction * transaction;
 

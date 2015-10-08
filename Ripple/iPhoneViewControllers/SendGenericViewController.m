@@ -1,14 +1,14 @@
 //
 //  SendGenericViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/23/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
 #import "SendGenericViewController.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+SendTransaction.h"
 #import "RPContact.h"
 #import "SendCurrencyViewController.h"
 #import "RPTransaction.h"
@@ -83,7 +83,7 @@
     } else {
         //NSLog(@"position %lu", (unsigned long)range.location);
         NSUInteger startPosition = range.location + searchStr.length;
-        NSUInteger addressLength = [[RippleJSManager shared] rippleWalletAddress].length;
+        NSUInteger addressLength = [[DivvyJSManager shared] divvyWalletAddress].length;
         if ((addressLength + startPosition) <= result.length) {
             // Trim to address
             NSRange r = NSMakeRange(startPosition, addressLength);
@@ -119,7 +119,7 @@
 -(void)checkValidAccount:(NSString*)account
 {
     [SVProgressHUD showWithStatus:@"Validating address" maskType:SVProgressHUDMaskTypeGradient];
-    [[RippleJSManager shared] wrapperIsValidAccount:account withBlock:^(NSError *error) {
+    [[DivvyJSManager shared] wrapperIsValidAccount:account withBlock:^(NSError *error) {
         if (!error) {
             [SVProgressHUD dismiss];
             self.transaction.to_address = account;
@@ -214,7 +214,7 @@
 
 -(void)refreshContacts
 {
-    contacts = [[RippleJSManager shared] rippleContacts];
+    contacts = [[DivvyJSManager shared] divvyContacts];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -230,7 +230,7 @@
     //self.labelTitle.text = [NSString stringWithFormat:@"Send %@", self.transaction.Currency];
     
 //#warning Testing purposes only
-//    [[RippleJSManager shared] wrapperSendTransactionAmount:[NSNumber numberWithFloat:0.1f] fromCurrency:@"XRP" toRecipient:@"r9xzeBM1tQ75Rm3iGWzxaArt8eQsGqv52j" toCurrency:@"USD" withBlock:^(NSError *error) {
+//    [[DivvyJSManager shared] wrapperSendTransactionAmount:[NSNumber numberWithFloat:0.1f] fromCurrency:@"XDV" toRecipient:@"r9xzeBM1tQ75Rm3iGWzxaArt8eQsGqv52j" toCurrency:@"USD" withBlock:^(NSError *error) {
 //        NSLog(@"%@",error.localizedDescription);
 //        
 //    }];

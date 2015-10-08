@@ -1,29 +1,29 @@
 //
-//  RippleJSManager+Initializer.m
-//  Ripple
+//  DivvyJSManager+Initializer.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+Initializer.h"
+#import "DivvyJSManager+Initializer.h"
 #import "RPGlobals.h"
 
-@implementation RippleJSManager (Initializer)
+@implementation DivvyJSManager (Initializer)
 
 #define HTML_BEGIN @"<!DOCTYPE html>\
 <html lang=\"en\">\
 <head>\
 <meta charset=\"utf-8\">\
-<title>Ripple Lib Demo</title>"
+<title>Divvy Lib Demo</title>"
 
 #define HTML_END @"</head>\
 <body>\
-<h1>Ripple Lib Demo</h1>\
+<h1>Divvy Lib Demo</h1>\
 </body>\
 </html>"
 
--(NSString*)rippleHTML
+-(NSString*)divvyHTML
 {
     NSMutableString * html = [NSMutableString stringWithString:HTML_BEGIN];
     
@@ -42,7 +42,7 @@
     path = nil;
     contents = nil;
     
-    path = [[NSBundle mainBundle] pathForResource:@"ripple-lib-wrapper" ofType:@"js"];
+    path = [[NSBundle mainBundle] pathForResource:@"divvy-lib-wrapper" ofType:@"js"];
     contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     [html appendFormat:@"<script>%@</script>", contents];
     path = nil;
@@ -50,7 +50,7 @@
     
     [html appendString:HTML_END];
     
-    //NSLog(@"%@: Ripple HTML:\n%@", self.class.description, html);
+    //NSLog(@"%@: Divvy HTML:\n%@", self.class.description, html);
     
     
     return html;
@@ -75,9 +75,9 @@
 {
     _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
     _webView.delegate = self;
-    NSString * html = [self rippleHTML];
+    NSString * html = [self divvyHTML];
     //NSLog(@"%@",html);
-    [_webView loadHTMLString:html baseURL:[NSURL URLWithString:@"http://ripple.com"]];
+    [_webView loadHTMLString:html baseURL:[NSURL URLWithString:@"http://divvy.com"]];
     [self setupJavascriptBridge];
 }
 

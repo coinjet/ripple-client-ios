@@ -1,6 +1,6 @@
 //
 //  WebViewBridgeManager.h
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/17/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -36,22 +36,22 @@
 
 
 // Notifications
-#define kNotificationRippleConnected     @"RippleNetworkConnected"
-#define kNotificationRippleDisconnected  @"RippleNetworkDisconnected"
-#define kNotificationUpdatedContacts     @"RippleUpdatedContacts"
-#define kNotificationUpdatedBalance      @"RippleUpdatedBalance"
-#define kNotificationUpdatedAccountTx    @"RippleUpdatedAccountTx"
-#define kNotificationUserLoggedIn        @"RippleUserLoggedIn"
-#define kNotificationUserLoggedOut       @"RippleUserLoggedOut"
+#define kNotificationDivvyConnected     @"DivvyNetworkConnected"
+#define kNotificationDivvyDisconnected  @"DivvyNetworkDisconnected"
+#define kNotificationUpdatedContacts     @"DivvyUpdatedContacts"
+#define kNotificationUpdatedBalance      @"DivvyUpdatedBalance"
+#define kNotificationUpdatedAccountTx    @"DivvyUpdatedAccountTx"
+#define kNotificationUserLoggedIn        @"DivvyUserLoggedIn"
+#define kNotificationUserLoggedOut       @"DivvyUserLoggedOut"
 
 
-#define kNotificationAccountChanged      @"RippleAccountChanged"
-#define kNotificationRefreshTx           @"RippleRefreshTx"
+#define kNotificationAccountChanged      @"DivvyAccountChanged"
+#define kNotificationRefreshTx           @"DivvyRefreshTx"
 
 
 @class WebViewJavascriptBridge, RPBlobData,RPAccountData;
 
-@interface RippleJSManager : NSObject {
+@interface DivvyJSManager : NSObject {
     UIWebView               * _webView;
     WebViewJavascriptBridge * _bridge;
     
@@ -69,12 +69,12 @@
     NSTimer * _networkTimeout;
 }
 
-+(RippleJSManager*)shared;
++(DivvyJSManager*)shared;
 
 -(BOOL)isConnected;
--(NSString*)rippleWalletAddress;
--(NSArray*)rippleContacts;
--(NSDictionary*)rippleBalances;
--(NSArray*)rippleTxHistory;
+-(NSString*)divvyWalletAddress;
+-(NSArray*)divvyContacts;
+-(NSDictionary*)divvyBalances;
+-(NSArray*)divvyTxHistory;
 
 @end

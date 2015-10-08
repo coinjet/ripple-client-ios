@@ -1,15 +1,15 @@
 //
-//  RippleStatusViewController.m
-//  Ripple
+//  DivvyStatusViewController.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/24/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleStatusViewController.h"
-#import "RippleJSManager.h"
+#import "DivvyStatusViewController.h"
+#import "DivvyJSManager.h"
 
-@interface RippleStatusViewController () {
+@interface DivvyStatusViewController () {
     UILabel * labelStatus;
     
     BOOL  showingDisconnected;
@@ -17,9 +17,9 @@
 
 @end
 
-@implementation RippleStatusViewController
+@implementation DivvyStatusViewController
 
--(void)RippleJSManagerConnected
+-(void)DivvyJSManagerConnected
 {
     showingDisconnected = NO;
     
@@ -42,7 +42,7 @@
         
     }];
 }
--(void)RippleJSManagerDisconnected
+-(void)DivvyJSManagerDisconnected
 {
     showingDisconnected = YES;
     
@@ -96,11 +96,11 @@
 
 -(void)checkNetworkStatus
 {
-    if ([[RippleJSManager shared] isConnected]) {
-        [self RippleJSManagerConnected];
+    if ([[DivvyJSManager shared] isConnected]) {
+        [self DivvyJSManagerConnected];
     }
     else {
-        [self RippleJSManagerDisconnected];
+        [self DivvyJSManagerDisconnected];
     }
 }
 
@@ -109,9 +109,9 @@
 {
     [super viewWillAppear:animated];
     
-    // Subscribe to ripple network state
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RippleJSManagerConnected) name:kNotificationRippleConnected object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RippleJSManagerDisconnected) name:kNotificationRippleDisconnected object:nil];
+    // Subscribe to divvy network state
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DivvyJSManagerConnected) name:kNotificationDivvyConnected object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DivvyJSManagerDisconnected) name:kNotificationDivvyDisconnected object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus) name: UIApplicationDidBecomeActiveNotification object:nil];
 }
@@ -128,9 +128,9 @@
 {
     [super viewWillDisappear:animated];
     
-    // Unsubscribe to ripple network state
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationRippleConnected object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationRippleDisconnected object:nil];
+    // Unsubscribe to divvy network state
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDivvyConnected object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kNotificationDivvyDisconnected object:nil];
 }
 
 - (void)viewDidLoad
@@ -148,7 +148,7 @@
     self.view.clipsToBounds = NO;
     [self.view addSubview:labelStatus];
     
-    if (![[RippleJSManager shared] isConnected]) {
+    if (![[DivvyJSManager shared] isConnected]) {
         CGRect f = self.view.frame;
         f.origin.y = 20.0f;
         self.view.frame = f;

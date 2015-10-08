@@ -3,20 +3,20 @@ function onBridgeReady(event) {
 	var bridge = event.bridge
 	bridge.init();
 
-	var remote = ripple.Remote.from_config({
+	var remote = divvy.Remote.from_config({
 		//"trace" : true,
 		trusted : true,
-		//websocket_ip : "s_west.ripple.com",
+		//websocket_ip : "s_west.divvy.com",
 		//websocket_port : 443,
 		//websocket_ssl : true,
 		local_signing : true,
 		servers: [
-		  { host: 's-west.ripple.com', port: 443, secure: true },
-		  { host: 's-east.ripple.com', port: 443, secure: true }
+		  { host: 's-west.divvy.com', port: 443, secure: true },
+		  { host: 's-east.divvy.com', port: 443, secure: true }
 		],
 	});
 
-	// XRP Account Balance
+	// XDV Account Balance
 	bridge.registerHandler('account_info', function(data, responseCallback) {
 		remote.request_account_info(data.account)
 		.on('success', function (result) {
@@ -60,21 +60,21 @@ function onBridgeReady(event) {
 
 			var to_currency = data.to_currency.slice(0, 3).toUpperCase();
 			var from_currency = data.from_currency.slice(0, 3).toUpperCase();
-			var to_amount = ripple.Amount.from_human(""+data.to_amount+" "+to_currency);
+			var to_amount = divvy.Amount.from_human(""+data.to_amount+" "+to_currency);
 			var to_address = data.to_address;
 
 			to_amount.set_issuer(to_address);
 
 			// Make sure recipient address is valid
-			if (ripple.UInt160.is_valid(to_address)) {
+			if (divvy.UInt160.is_valid(to_address)) {
 	    	var tx = remote.transaction();
 	    	tx.payment(data.account, to_address, to_amount.to_json());
 
 				// Valid
-				if (to_currency === "XRP" && from_currency === "XRP") {
-					// XRP Transaction only
+				if (to_currency === "XDV" && from_currency === "XDV") {
+					// XDV Transaction only
 
-		    	// Sending XRP
+		    	// Sending XDV
 		    	tx.build_path(true);
 
 		    	// Send transaction
@@ -90,8 +90,8 @@ function onBridgeReady(event) {
 		    	var path = data.path;
 
           var prepared_paths = path.paths_computed ? path.paths_computed: path.paths_canonical;
-          var base_amount = ripple.Amount.from_json(path.source_amount);
-          tx.send_max(base_amount.product_human(ripple.Amount.from_json('1.01')));
+          var base_amount = divvy.Amount.from_json(path.source_amount);
+          tx.send_max(base_amount.product_human(divvy.Amount.from_json('1.01')));
 
           if (prepared_paths) {
           	tx.paths(prepared_paths);
@@ -125,7 +125,7 @@ function onBridgeReady(event) {
 
 	// Checking for valid account
 	bridge.registerHandler('is_valid_account', function(data, responseCallback) {
-		if (ripple.UInt160.is_valid(data.account)) {
+		if (divvy.UInt160.is_valid(data.account)) {
 		  responseCallback(JSON.parse('{"message":"Valid address: '+data.account+'"}'));
 		}
 		else {
@@ -142,16 +142,16 @@ function onBridgeReady(event) {
 			remote.set_secret(data.account, data.secret);
 
 			var currency = data.currency.slice(0, 3).toUpperCase();
-			var amount = ripple.Amount.from_human(""+data.amount+" "+currency)
+			var amount = divvy.Amount.from_human(""+data.amount+" "+currency)
 			amount.set_issuer(data.recipient_address);
 
 	  	// Calculate path
-	    remote.request_ripple_path_find(data.account,
+	    remote.request_divvy_path_find(data.account,
 	                                            data.recipient_address,
 	                                            amount)
 	    // XXX Handle error response
 	    .on('success', function (response_find_path) {
-	      if ((!response_find_path.alternatives || !response_find_path.alternatives.length) && currency !== "XRP") {
+	      if ((!response_find_path.alternatives || !response_find_path.alternatives.length) && currency !== "XDV") {
 	        responseCallback(JSON.parse('{"error":"No Path"}'))
 	  			return;
 	      } else {
@@ -201,12 +201,12 @@ function onBridgeReady(event) {
 		}
 	})
 
-	// Connect to ripple network
+	// Connect to divvy network
 	bridge.registerHandler('connect', function(data, responseCallback) {
 		remote.connect();
 	})
 
-	// Disconnect to ripple network
+	// Disconnect to divvy network
 	bridge.registerHandler('disconnect', function(data, responseCallback) {
 		remote.disconnect();
 	})
@@ -217,7 +217,7 @@ function onBridgeReady(event) {
 	//   })
 	// });
 
-	// Connected to ripple network
+	// Connected to divvy network
 	remote.on('connect', function () {
 		bridge.callHandler('connected', null, function(response) {
 		});

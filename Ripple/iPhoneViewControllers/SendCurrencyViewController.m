@@ -1,6 +1,6 @@
 //
 //  SendCurrencyViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/29/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -11,8 +11,8 @@
 #import "SendAmountViewController.h"
 #import "RPNewTransaction.h"
 
-#import "RippleJSManager.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+SendTransaction.h"
 
 @interface SendCurrencyViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
     NSDictionary * balances;
@@ -28,7 +28,7 @@
 {
     if (buttonIndex == 0) {
         // Open web client
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://ripple.com/client"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://divvy.com/client"]];
     }
 }
 
@@ -37,7 +37,7 @@
     currency = [currency uppercaseString];
     
     // Required Apple change
-    if (GLOBAL_RESTRICT_DIGITAL_CURRENCIES && [currency isEqualToString:GLOBAL_XRP_STRING]) {
+    if (GLOBAL_RESTRICT_DIGITAL_CURRENCIES && [currency isEqualToString:GLOBAL_XDV_STRING]) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:APPLE_MESSAGE_TITLE
                                                          message:APPLE_MESSAGE_MESG
                                                         delegate:self
@@ -124,7 +124,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    balances = [[RippleJSManager shared] rippleBalances];
+    balances = [[DivvyJSManager shared] divvyBalances];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,14 +1,14 @@
 //
-//  RippleTests.m
-//  RippleTests
+//  DivvyTests.m
+//  DivvyTests
 //
 //  Created by Kevin Johnson on 7/17/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleTests.h"
+#import "DivvyTests.h"
 
-@implementation RippleTests
+@implementation DivvyTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in RippleTests");
+    STFail(@"Unit tests are not implemented yet in DivvyTests");
 }
 
 @end

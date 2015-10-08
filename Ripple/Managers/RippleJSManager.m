@@ -1,43 +1,43 @@
 //
 //  WebViewBridgeManager.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/17/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
-#import "RippleJSManager+Initializer.h"
-#import "RippleJSManager+AccountInfo.h"
-#import "RippleJSManager+AccountLines.h"
-#import "RippleJSManager+TransactionCallback.h"
-#import "RippleJSManager+NetworkStatus.h"
-#import "RippleJSManager+Authentication.h"
-#import "RippleJSManager+SendTransaction.h"
-#import "RippleJSManager+AccountOffers.h"
-#import "RippleJSManager+AccountTx.h"
+#import "DivvyJSManager+Initializer.h"
+#import "DivvyJSManager+AccountInfo.h"
+#import "DivvyJSManager+AccountLines.h"
+#import "DivvyJSManager+TransactionCallback.h"
+#import "DivvyJSManager+NetworkStatus.h"
+#import "DivvyJSManager+Authentication.h"
+#import "DivvyJSManager+SendTransaction.h"
+#import "DivvyJSManager+AccountOffers.h"
+#import "DivvyJSManager+AccountTx.h"
 
 
-@interface RippleJSManager ()
+@interface DivvyJSManager ()
 
 @end
 
-@implementation RippleJSManager
+@implementation DivvyJSManager
 
--(NSString*)rippleWalletAddress
+-(NSString*)divvyWalletAddress
 {
     return [self account_id];
 }
 
--(NSArray*)rippleContacts
+-(NSArray*)divvyContacts
 {
     return _contacts;
 }
 
--(NSArray*)rippleTxHistory
+-(NSArray*)divvyTxHistory
 {
-    return [_accountHistory rippleTxHistory];
+    return [_accountHistory divvyTxHistory];
 }
 
 -(BOOL)isConnected
@@ -50,7 +50,7 @@
     if (_isLoggedIn) {
         [self wrapperSubscribeTransactions];  // Subscribe to users transactions
         [self wrapperAccountLines];           // Get IOU balances
-        [self wrapperAccountInfo];            // Get Ripple balance
+        [self wrapperAccountInfo];            // Get Divvy balance
         [self wrapperAccountTx];              // Get Last transactions
     }
 }
@@ -62,9 +62,9 @@
     }
 }
 
--(NSDictionary*)rippleBalances
+-(NSDictionary*)divvyBalances
 {
-    return [_accountBalance rippleBalances];
+    return [_accountBalance divvyBalances];
 }
 
 -(void)connect
@@ -75,25 +75,25 @@
 
 -(void)disconnect
 {
-    // Disconnect from Ripple server
+    // Disconnect from Divvy server
     [_bridge callHandler:@"disconnect" data:@"" responseCallback:^(id responseData) {
     }];
 }
 
--(void)rippleNetworkConnected
+-(void)divvyNetworkConnected
 {
     [self updateAccountInformation];
 }
 
--(void)rippleNetworkDisconnected
+-(void)divvyNetworkDisconnected
 {
     
 }
 
 -(void)userLoggedIn
 {
-    _accountBalance = [[AccountBalanceManager alloc] initWithAccount:[self rippleWalletAddress]];
-    _accountHistory = [[AccountHistoryManager alloc] initWithAccount:[self rippleWalletAddress]];
+    _accountBalance = [[AccountBalanceManager alloc] initWithAccount:[self divvyWalletAddress]];
+    _accountHistory = [[AccountHistoryManager alloc] initWithAccount:[self divvyWalletAddress]];
     [self updateAccountInformation];
 }
 
@@ -104,11 +104,11 @@
     _accountHistory = nil;
 }
 
-+(RippleJSManager*)shared
++(DivvyJSManager*)shared
 {
-    static RippleJSManager * shared;
+    static DivvyJSManager * shared;
     if (!shared) {
-        shared = [RippleJSManager new];
+        shared = [DivvyJSManager new];
     }
     return shared;
 }
@@ -121,8 +121,8 @@
         _isLoggedIn = NO;
         _isAttemptingLogin = NO;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rippleNetworkConnected) name:kNotificationRippleConnected object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rippleNetworkDisconnected) name:kNotificationRippleDisconnected object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(divvyNetworkConnected) name:kNotificationDivvyConnected object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(divvyNetworkDisconnected) name:kNotificationDivvyDisconnected object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoggedIn) name:kNotificationUserLoggedIn object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLoggedOut) name:kNotificationUserLoggedOut object:nil];
         

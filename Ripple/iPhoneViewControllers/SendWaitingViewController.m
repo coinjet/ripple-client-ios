@@ -1,6 +1,6 @@
 //
 //  SendWaitingViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/24/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -9,8 +9,8 @@
 #import "SendWaitingViewController.h"
 #import "AppDelegate.h"
 #import "RPNewTransaction.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+SendTransaction.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+SendTransaction.h"
 #import "SVProgressHUD.h"
 
 @interface SendWaitingViewController ()
@@ -34,9 +34,9 @@
     self.labelStatus.text = @"Sending...";
     self.labelErrorReason.text = @"";
     
-    //[[RippleJSManager shared] wrapperSendTransactionAmount:self.transaction.Amount fromCurrency:self.transaction.Currency toRecipient:self.transaction.Destination toCurrency:self.transaction.Destination_currency withBlock:^(NSError *error) {
+    //[[DivvyJSManager shared] wrapperSendTransactionAmount:self.transaction.Amount fromCurrency:self.transaction.Currency toRecipient:self.transaction.Destination toCurrency:self.transaction.Destination_currency withBlock:^(NSError *error) {
     
-    [[RippleJSManager shared] wrapperSendTransactionAmount:self.transaction withBlock:^(NSError *error) {
+    [[DivvyJSManager shared] wrapperSendTransactionAmount:self.transaction withBlock:^(NSError *error) {
         if (error) {
             //[SVProgressHUD showErrorWithStatus:@"Could not send"];
             

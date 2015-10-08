@@ -1,21 +1,21 @@
 //
-//  RippleJSManager+Authentication.m
-//  Ripple
+//  DivvyJSManager+Authentication.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+Authentication.h"
+#import "DivvyJSManager+Authentication.h"
 #import "NSString+Hashes.h"
 #import "SSKeychain.h"
 #import "Base64.h"
 
-@implementation RippleJSManager (Authentication)
+@implementation DivvyJSManager (Authentication)
 
-#define SSKEYCHAIN_SERVICE      @"ripple"
-#define USERDEFAULTS_RIPPLE_KEY @"RippleKey"
-#define USERDEFAULTS_RIPPLE_USERNAME @"RippleUsername"
+#define SSKEYCHAIN_SERVICE      @"divvy"
+#define USERDEFAULTS_RIPPLE_KEY @"DivvyKey"
+#define USERDEFAULTS_RIPPLE_USERNAME @"DivvyUsername"
 
 -(NSString*)account_id
 {
@@ -107,7 +107,7 @@
                         
                         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUpdatedContacts object:nil userInfo:nil];
                         
-                        // Save ripple address
+                        // Save divvy address
                         [[NSUserDefaults standardUserDefaults] setObject:wallet forKey:USERDEFAULTS_RIPPLE_KEY];
                         [[NSUserDefaults standardUserDefaults] setObject:username forKey:USERDEFAULTS_RIPPLE_USERNAME];
                         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -143,7 +143,7 @@
             else {
                 // Failed
                 NSLog(@"decrypt_blob failed response");
-                NSError * error = [NSError errorWithDomain:@"login" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Sorry. This app is currently incompatible with the new Ripple Trade blob"}];
+                NSError * error = [NSError errorWithDomain:@"login" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Sorry. This app is currently incompatible with the new Divvy Trade blob"}];
                 [self logout];
                 block(error);
             }
@@ -235,7 +235,7 @@
         
     }
     
-    NSString * wallet = [self rippleWalletAddress];
+    NSString * wallet = [self divvyWalletAddress];
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:USERDEFAULTS_RIPPLE_KEY];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:USERDEFAULTS_RIPPLE_USERNAME];

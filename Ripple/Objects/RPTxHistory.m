@@ -1,6 +1,6 @@
 //
 //  RPTxHistory.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ReceiveViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/23/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "ReceiveViewController.h"
 #import "QREncoder.h"
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 
 @interface ReceiveViewController ()
 
@@ -20,7 +20,7 @@
 
 -(IBAction)buttonCopyToClipboard:(id)sender
 {
-    NSString * address = [[RippleJSManager shared] rippleWalletAddress];
+    NSString * address = [[DivvyJSManager shared] divvyWalletAddress];
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
     [pb setString:address];
 
@@ -48,8 +48,8 @@
     int qrcodeImageDimension = 250;
     
     //the string can be very long
-    NSString* walletAddress = [[RippleJSManager shared] rippleWalletAddress];
-    NSString * qrCodeAddress = [NSString stringWithFormat:@"https://ripple.com//contact?to=%@",walletAddress];
+    NSString* walletAddress = [[DivvyJSManager shared] divvyWalletAddress];
+    NSString * qrCodeAddress = [NSString stringWithFormat:@"https://divvy.com//contact?to=%@",walletAddress];
     
     //first encode the string into a matrix of bools, TRUE for black dot and FALSE for white. Let the encoder decide the error correction level and version
     DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:qrCodeAddress];

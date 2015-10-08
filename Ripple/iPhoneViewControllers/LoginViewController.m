@@ -1,14 +1,14 @@
 //
 //  LoginViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/22/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
 #import "LoginViewController.h"
-#import "RippleJSManager.h"
-#import "RippleJSManager+Authentication.h"
+#import "DivvyJSManager.h"
+#import "DivvyJSManager+Authentication.h"
 #import "SVProgressHUD.h"
 
 @interface LoginViewController () <UITextFieldDelegate, UIAlertViewDelegate>
@@ -32,13 +32,13 @@
 
 -(IBAction)signupButton:(id)sender
 {
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: @"https://ripple.com/client/#/register"]];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: @"https://divvy.com/client/#/register"]];
 }
 
 -(void)login
 {
     [SVProgressHUD showWithStatus:@"Logging in..." maskType:SVProgressHUDMaskTypeGradient];
-    [[RippleJSManager shared] login:self.textFieldUsername.text andPassword:self.textFieldPassword.text withBlock:^(NSError *error) {
+    [[DivvyJSManager shared] login:self.textFieldUsername.text andPassword:self.textFieldPassword.text withBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
         if (!error) {
             self.textFieldUsername.text = @"";
@@ -75,7 +75,7 @@
 {
     [super viewDidAppear:animated];
     
-    if ([[RippleJSManager shared] isLoggedIn]) {
+    if ([[DivvyJSManager shared] isLoggedIn]) {
         [self performSegueWithIdentifier:@"Next" sender:nil];
     }
     else {

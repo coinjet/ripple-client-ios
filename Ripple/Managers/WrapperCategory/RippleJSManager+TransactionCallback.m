@@ -1,19 +1,19 @@
 //
-//  RippleJSManager+TransactionCallback.m
-//  Ripple
+//  DivvyJSManager+TransactionCallback.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+TransactionCallback.h"
+#import "DivvyJSManager+TransactionCallback.h"
 
-@implementation RippleJSManager (TransactionCallback)
+@implementation DivvyJSManager (TransactionCallback)
 
 -(NSError*)checkForError:(NSDictionary*)response
 {
     NSError * error;
-    // Check for ripple-lib error
+    // Check for divvy-lib error
     NSNumber * returnCode = [response objectForKey:@"engine_result_code"];
     if (returnCode.integerValue != 0) {
         // Could not send transaction
@@ -200,7 +200,7 @@
                                                   };
                                                   LowNode = 0000000000000000;
                                               };
-                                              LedgerEntryType = RippleState;
+                                              LedgerEntryType = DivvyState;
                                               LedgerIndex = 1EB4457CEE28C02EDD3C1A247F18852822CEBC8A8FDCC5589D8CB3F39406C3A8;
                                               PreviousFields =                     {
                                                   Balance =                         {
@@ -246,7 +246,7 @@
                               },
                               {
                                   diffType = ModifiedNode;
-                                  entryType = RippleState;
+                                  entryType = DivvyState;
                                   fields =                 {
                                       Balance =                     {
                                           currency = USD;

@@ -1,6 +1,6 @@
 //
 //  UserAccountInformation.h
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -18,7 +18,7 @@
 }
 
 //+(UserAccountInformation*)shared;
--(NSDictionary*)rippleBalances;
+-(NSDictionary*)divvyBalances;
 
 -(void)processAccountInfo:(NSDictionary*)responseData;
 -(void)processAccountLines:(NSDictionary*)responseData;

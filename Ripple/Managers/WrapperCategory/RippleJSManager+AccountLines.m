@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+AccountLines.m
-//  Ripple
+//  DivvyJSManager+AccountLines.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+AccountLines.h"
+#import "DivvyJSManager+AccountLines.h"
 
-@implementation RippleJSManager (AccountLines)
+@implementation DivvyJSManager (AccountLines)
 
 -(void)wrapperAccountLines
 {

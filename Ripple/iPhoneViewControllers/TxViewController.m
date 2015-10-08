@@ -1,6 +1,6 @@
 //
 //  TxViewController.m
-//  Ripple
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/26/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "TxViewController.h"
 
-#import "RippleJSManager.h"
+#import "DivvyJSManager.h"
 #import "RPTxHistory.h"
 
 @interface TxViewController () <UITableViewDataSource, UITableViewDelegate> {
@@ -34,7 +34,7 @@
     
     RPTxHistory * obj = [tx objectAtIndex:indexPath.row];
     
-    NSString * account = [[RippleJSManager shared] rippleWalletAddress];
+    NSString * account = [[DivvyJSManager shared] divvyWalletAddress];
     
     if ([obj.FromAccount isEqualToString:account]) {
         // Sent
@@ -62,7 +62,7 @@
 
 -(void)updateTx
 {
-    tx = [[RippleJSManager shared] rippleTxHistory];
+    tx = [[DivvyJSManager shared] divvyTxHistory];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 

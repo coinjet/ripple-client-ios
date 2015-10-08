@@ -1,14 +1,14 @@
 //
-//  RippleJSManager+AccountTx.m
-//  Ripple
+//  DivvyJSManager+AccountTx.m
+//  Divvy
 //
 //  Created by Kevin Johnson on 7/25/13.
 //  Copyright (c) 2013 OpenCoin Inc. All rights reserved.
 //
 
-#import "RippleJSManager+AccountTx.h"
+#import "DivvyJSManager+AccountTx.h"
 
-@implementation RippleJSManager (AccountTx)
+@implementation DivvyJSManager (AccountTx)
 
 // Last transactions
 -(void)wrapperAccountTx
@@ -47,7 +47,7 @@
                                                                                  };
                                                                                  LowNode = 000000000000009A;
                                                                              };
-                                                                             LedgerEntryType = RippleState;
+                                                                             LedgerEntryType = DivvyState;
                                                                              LedgerIndex = 0AD2981C87449709BEA806EB6E597FB6ACAE3C01DF13A1A16B130870E19539BD;
                                                                              PreviousFields =                             {
                                                                                  Balance =                                 {
@@ -121,7 +121,7 @@
                                                                      },
                                                                      {
                                                                          CreatedNode =                         {
-                                                                             LedgerEntryType = RippleState;
+                                                                             LedgerEntryType = DivvyState;
                                                                              LedgerIndex = 45BE39B8F9F8B55C9F978C76B99C57B1072EEA95B00DB222B1907BE24EDC3935;
                                                                              NewFields =                             {
                                                                                  Balance =                                 {
