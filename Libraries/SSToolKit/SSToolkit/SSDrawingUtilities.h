@@ -38,9 +38,9 @@
  
  @param f The float to limit.
  
- @param min The minumum value for the float.
+ @param min The minimum value for the float.
  
- @param max The minumum value for the float.
+ @param max The minimum value for the float.
  
  @return A float limited to the `min` or `max` value.
  */

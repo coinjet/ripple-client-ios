@@ -54,7 +54,7 @@
 
 -(void)login:(NSString*)username andPassword:(NSString*)password withBlock:(void(^)(NSError* error))block
 {
-    NSLog(@"%@: Atempting to log in as: %@", self, username);
+    NSLog(@"%@: Attempting to log in as: %@", self, username);
     _isAttemptingLogin = YES;
     
     // Normalize

@@ -163,7 +163,7 @@
 }
  
  
- Same account with an additional 10 XDV transfered
+ Same account with an additional 10 XDV transferred
  
 {
     account = rfGKu3tSxwMFZ5mQ6bUcxWrxahACxABqKc;

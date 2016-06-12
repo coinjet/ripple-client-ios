@@ -5327,7 +5327,7 @@ var ripple =
 	 * Represents a persistent path finding request.
 	 *
 	 * Only one path find request is allowed per connection, so when another path
-	 * find request is triggered it will supercede the existing one, making it emit
+	 * find request is triggered it will supersede the existing one, making it emit
 	 * the 'end' and 'superceded' events.
 	 */
 	function PathFind(remote, src_account, dst_account, dst_amount, src_currencies) {
