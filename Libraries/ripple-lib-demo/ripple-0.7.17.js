@@ -1821,7 +1821,7 @@ var ripple =
 	};
 	
 	// Make d a copy of this. Returns d.
-	// Modification of objects internally refered to is not allowed.
+	// Modification of objects internally referred to is not allowed.
 	Amount.prototype.copyTo = function (d, negate) {
 	  if ('object' === typeof this._value)
 	  {

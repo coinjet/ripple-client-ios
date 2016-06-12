@@ -17,7 +17,7 @@
 - (void)removeAllTargets;
 
 /**
- Sets exclusive target for specified event, all previous targets will be removed, usefull for table cells etc
+ Sets exclusive target for specified event, all previous targets will be removed, useful for table cells etc
  */
 - (void)setTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 
