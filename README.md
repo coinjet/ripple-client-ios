@@ -1,15 +1,15 @@
-ripple-client-ios
+divvy-client-ios
 =================
 
-Ripple iOS Client
+Divvy iOS Client
 
 ### Instructions:
 
 ```
-git clone git@github.com:ripple/ripple-client-ios.git
-cd ripple-client-ios
+git clone git@github.com:xdv/divvy-client-ios.git
+cd divvy-client-ios
 pod install
-open Ripple.xcworkspace
+open Divvy.xcworkspace
 ```
 
 
@@ -17,7 +17,7 @@ open Ripple.xcworkspace
 
 Change flag to NO in the RPGlobals.h file 
 
-https://github.com/ripple/ripple-client-ios/blob/master/Ripple/RPGlobals.h#L18
+https://github.com/xdv/divvy-client-ios/blob/master/Divvy/RPGlobals.h#L18
 
 ```
 // Required for the Apple App Store
